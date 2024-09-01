@@ -3,6 +3,11 @@
 #--pip /pip3 install requests 
 #-- pip/pip3 install beautifulSoup4
 
+job_title=[]
+company_name=[]
+location_name=[]
+skills=[]
+
 import requests 
 from bs4 import BeautifulSoup
 import csv
@@ -29,5 +34,17 @@ for div in divs:
     if div.find("a", {"class": "css-5x9pm1"}):
         job_skills.append(div)  
 
+#6th step loop over returned lists to extract needed info into other lists
 
-print(job_skills)
+# Iterate over the indices of the 'job_titles' list
+# 'range(len(job_titles))' generates a sequence of numbers from 0 to the length of 'job_titles' - 1
+# For example, if 'job_titles' has 5 elements, 'range(len(job_titles))' will generate 0, 1, 2, 3, 4
+# This allows you to access each element of the list by its index 'i'
+for i in range(len(job_titles)):
+   job_title.append(job_titles[i].text)
+   company_name.append(company_names[i].text)
+   location_name.append(locations_names[i].text)
+   skills.append(job_skills[i].text)
+
+
+print(skills)
