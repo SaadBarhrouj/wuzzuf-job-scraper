@@ -19,3 +19,5 @@ soup=BeautifulSoup(src,"lxml")
 
 #5th step find the elements containing info we need
 #-- job titles|job skills|company|names|location names
+job_titles=soup.find_all("h2",{"class":"css-m604qf"})
+print(job_titles)
