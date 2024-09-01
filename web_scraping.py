@@ -49,7 +49,13 @@ for i in range(len(job_titles)):
    location_name.append(locations_names[i].text)
    skills.append(job_skills[i].text)
 
+# 7th step create csv file and fill it with values
+# Or: with open("C:\\Users\\Lenovo\\Desktop\\test22\\jobs-stats.csv", "w") as file:
 
+with open(r"C:\Users\Lenovo\Desktop\test22\jobs-stats.csv","w") as file:
+  wr=csv.writer(file)
+  wr.writerow(["Job Title","Company Name","Location","Salary"])
+ 
 
 
  
