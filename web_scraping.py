@@ -8,6 +8,7 @@ company_name=[]
 location_name=[]
 skills=[]
 links=[]
+Salary=[]
 
 import requests 
 from bs4 import BeautifulSoup
@@ -51,14 +52,24 @@ for i in range(len(job_titles)):
    location_name.append(locations_names[i].text)
    skills.append(job_skills[i].text)
 
+for link in links:
+   result =requests.get(link)
+   src=result.content
+   soup=BeautifulSoup(src,"lxml")
+   spans=soup.find_all("span",{"class":"css-47jx3m"})
+   salaries = [span.text.strip() for span in spans if "salary" in span.text.lower()]
+
+   
+
+print(salaries)   
 # 7th step create csv file and fill it with values
-file_list=[job_title,company_name,location_name,skills,links]
+file_list=[job_title,company_name,location_name,skills,Salary]
 exported=zip_longest(*file_list)
 # Or: with open("C:\\Users\\Lenovo\\Desktop\\test22\\jobs-stats.csv", "w") as file:
 
 with open(r"C:\Users\Lenovo\Desktop\test22\jobs-stats.csv","w") as file:
   wr=csv.writer(file)
-  wr.writerow(["Job Title","Company Name","Location","Skills","links"])
+  wr.writerow(["Job Title","Company Name","Location","Skills","Salary"])
   wr.writerows(exported)
  
 
