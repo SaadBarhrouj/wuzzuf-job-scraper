@@ -7,6 +7,7 @@ job_title=[]
 company_name=[]
 location_name=[]
 skills=[]
+links=[]
 
 import requests 
 from bs4 import BeautifulSoup
@@ -45,18 +46,19 @@ for target_div in target_divs:
 
 for i in range(len(job_titles)):
    job_title.append(job_titles[i].text)
+   links.append(job_titles[i].find("a").attrs['href'])
    company_name.append(company_names[i].text)
    location_name.append(locations_names[i].text)
    skills.append(job_skills[i].text)
 
 # 7th step create csv file and fill it with values
-file_list=[job_title,company_name,location_name,skills]
+file_list=[job_title,company_name,location_name,skills,links]
 exported=zip_longest(*file_list)
 # Or: with open("C:\\Users\\Lenovo\\Desktop\\test22\\jobs-stats.csv", "w") as file:
 
 with open(r"C:\Users\Lenovo\Desktop\test22\jobs-stats.csv","w") as file:
   wr=csv.writer(file)
-  wr.writerow(["Job Title","Company Name","Location","Skills"])
+  wr.writerow(["Job Title","Company Name","Location","Skills","links"])
   wr.writerows(exported)
  
 
