@@ -13,4 +13,9 @@ result =requests.get("https://wuzzuf.net/search/jobs/?q=")
 
 #3rd step save page content/markup
 src=result.content
-print(src)
+
+#4th step find the elements containing info we need
+soup=BeautifulSoup(src,"lxml")
+
+#5th step find the elements containing info we need
+#-- job titles|job skills|company|names|location names
