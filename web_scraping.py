@@ -9,4 +9,8 @@ import csv
 from itertools import zip_longest
 
 #2nd step use requests to fetch the url
-result =requests.get(http://wuzzuf.net/search/jons/?q=python&a=hpb)
+result =requests.get("https://wuzzuf.net/search/jobs/?q=")
+
+#3rd step save page content/markup
+src=result.content
+print(src)
