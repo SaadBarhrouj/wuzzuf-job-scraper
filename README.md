@@ -21,10 +21,12 @@
    git clone https://github.com/SaadBarhrouj/wuzzuf-job-scraper.git
 ## 🚀 Installez les dépendances
 
-  pip install -r requirements.txt
+   pip install -r requirements.txt
+
 
 ## 🛠️ Utilisation
-python scraper.py
+    python scraper.py
+
 
 ## 🚨 Note
  Certains éléments du site peuvent être dynamiques et difficilement accessibles avec BeautifulSoup, car ils sont chargés via JavaScript. Pour ces éléments, une 
@@ -35,10 +37,15 @@ python scraper.py
 
 ## 🤔 Contribuer
  Si vous souhaitez contribuer à ce projet, merci de suivre ces étapes :
+ 
  1-Forkez le dépôt
+ 
  2-Créez une branche (git checkout -b feature/your-feature)
+ 
  3-Committez vos modifications (git commit -am 'Add new feature')
+ 
  4-Push sur la branche (git push origin feature/your-feature)
+ 
  5-Créez une pull request
 
 ## 📞 Contact
