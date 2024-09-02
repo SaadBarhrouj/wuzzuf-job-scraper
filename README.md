@@ -18,11 +18,13 @@ Un scraper Python pour extraire des données d'offres d'emploi depuis Wuzzuf. Ce
 1. Clonez le dépôt
    ```bash
    git clone https://github.com/SaadBarhrouj/wuzzuf-job-scraper.git
-**🚀 Installez les dépendances**
+## 🚀 Installez les dépendances
+
 pip install -r requirements.txt
 
 ## 🛠️ Utilisation
 python scraper.py
+```bash
 
 ## 🚨 Note
 Certains éléments du site peuvent être dynamiques et difficilement accessibles avec BeautifulSoup, car ils sont chargés via JavaScript. Pour ces éléments, une approche plus avancée comme l'utilisation de Selenium pourrait être nécessaire.
