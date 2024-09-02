@@ -20,8 +20,7 @@
    ```bash
    git clone https://github.com/SaadBarhrouj/wuzzuf-job-scraper.git
 ## 🚀 Installez les dépendances
-
-   pip install -r requirements.txt
+     pip install -r requirements.txt
 
 
 ## 🛠️ Utilisation
